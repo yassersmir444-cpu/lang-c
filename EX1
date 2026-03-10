@@ -1,0 +1,505 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define Nmax 50
+int main()
+/*
+{
+  int N;
+float MF;
+char alpha;
+printf("entrez le montant:");
+scanf("%d",&N);
+do
+{
+    printf("entrez la devise de destination:");
+    scanf(" %c",&alpha);
+} while (alpha!='e' && alpha!='E' && alpha!='U' && alpha!='u');
+if(alpha=='u' || alpha=='U'){
+MF=0.11 *N;
+}
+else if(alpha=='e' || alpha=='E'){
+MF=0.09 *N;
+}
+printf("le montant apres conversion est:%.2f\n",MF);
+
+}
+*/
+/*{
+int N,S=0,P=1,scp=0,sco=0;
+float sr=0;
+do
+{
+    printf("entrez un valeur:");
+    scanf("%d",&N);
+    if(N>=0 && scp<5)
+{
+S+=N;
+scp++;
+}
+else if(N<0 && sco<5){
+P*=N;
+sco++;
+} if(N>0 && N%2==0){
+sr+=sqrt(N);
+}
+} while (N!=-1);
+
+printf("somme  =%d\n",S);
+printf("produit  =%d\n",P);
+printf("somme_racine  =%.6f\n", sr);
+}
+*/
+/*{
+int N,aug1,aug2,dp,prk;
+float pi,pf;
+char type,V;
+do{
+printf("le nombre de passagers:");
+scanf("%d",&N);}
+while (N<=0);
+
+do
+{
+    printf("la distance parcourue de chaque passager est:");
+    scanf("%d",&dp);
+} while (N<=0);
+
+if(dp<200)
+prk=3;
+else if(dp<500)
+prk=5;
+else if(dp<1000)
+prk=7;
+else
+prk=10;
+
+pi=dp*prk;
+
+do{
+    printf("la class :");
+    scanf(" %c",&type);
+}while (type!='B' && type!='b' && type!='E' && type!='e');
+if (type=='B' || type=='b')
+{
+    aug1=pi*0.1;
+}
+else{
+aug1=0;}
+
+do{
+    printf("le type du voyage:");
+    scanf(" %c",&V);
+}while(V!='D' && V!='d' && V!='C' && V!='c');
+if(V=='D' || V=='d'){
+aug2=pi*0.2;}
+else{
+aug2=pi*0.1;}
+pf=pi+aug1+aug2;
+printf("le prix initial est:%.2f\n",pi);
+printf("l'augmantation de class A1 est:%d\n",aug1);
+printf("l'augmantation de class A2 est:%d\n",aug2);
+printf("le prix final est:%.2f\n",pf);
+}
+*/
+/*
+{
+    int N,p=1,s=0,sos=0,sop=0;
+    float sq=0;
+do{
+    printf("entrez une valeur:");
+    scanf("%d",&N);
+    if(N>0 && sos<5){
+    s+=N;
+    sos++;}
+     else if(N<0 && sop<5){
+    p*=N;
+    sop++;}
+  if(N%2==0 && N>0 && N!=-1){
+  sq+=sqrt(N);}
+}
+while(N!=-1);
+
+printf("somme  =%d\n",s);
+printf("produit  =%d\n",p);
+printf("somme_racine  =%.2f\n",sq);
+}
+*/
+{
+/*int m,c,d,u,n;
+
+printf("entrez un nombre:");
+scanf("%d",&n);
+
+m=n/1000;
+c=(n/100)%10;
+d=(n/10)%10;
+u=n%10;
+
+if(m!=c && d!=u && m!=u && m!=d && c!=d && c!=u)
+printf("%d est un distinct",n);
+else 
+printf("%d n'est pas un distinct",n);
+*/
+/*int n,jour,i=1,chambre;
+float red1=0,red2=0,pi,pa,pj;
+printf("entrez le nombre  de client :");
+scanf("%d",&n);
+
+do
+{
+  printf("\n client %d\n",i);
+
+  printf("nombre de jours:");
+  scanf("%d",&jour);
+
+  printf("le type de chambre (2 ou 3?):");
+  scanf("%d",&chambre);
+
+  printf("le prix journale:");
+  scanf("%f",&pj);
+
+  if(jour<3){
+    pi=jour*pj;
+    red1=0;
+  }
+  if(jour<10){
+  pi=jour*pj;
+  red1=pi*0.1;}
+  else{
+    pi=(jour-1)*pj;
+    red1=pi*0.2;
+  }
+
+  if(chambre==2){
+  red2=pi*0.05;}
+else{
+    red2=pi*0.1;
+}
+pa=pi-(red1+red2);
+printf("le prix ini est:%.2f\n",pi);
+printf("la reduction 1 est:%.2f\n",red1);
+printf("la reduction 2 est:%.2f\n",red2);
+printf("le prix tot est:%.2f\n",pa);
+i++;
+} while (i<=n);
+
+*/
+/*
+           int N, pos=0, neg=0, zero=0;
+    int minpos , maxneg ;
+    float MP, MN, sumpos=0, sumneg=0;
+
+    printf("Entrez un nombre : ");
+        scanf("%d",&N);
+maxneg=N;
+minpos=N;
+    do {
+        printf("Entrez un nombre : ");
+        scanf("%d",&N);
+
+        if(N == -999) break;
+
+        if(N > 0){
+            sumpos += N;
+            pos++;
+
+            if(N < minpos)
+                minpos = N;
+        }
+
+        else if(N < 0){
+            sumneg += N;
+            neg++;
+
+            if(N > maxneg)
+                maxneg = N;
+        }
+
+        else {
+            zero++;
+        }
+
+    } while(1);
+
+    if(pos != 0){
+        MP = sumpos / pos;
+        printf("La moyenne des positifs = %.2f\n", MP);
+        printf("Minimum positif = %d\n", minpos);
+    }
+
+    if(neg != 0){
+        MN = sumneg / neg;
+        printf("La moyenne des negatifs = %.2f\n", MN);
+        printf("Maximum negatif = %d\n", maxneg);
+    }
+
+    printf("Nombre de zeros = %d\n", zero);
+    */
+   /*int nbremp,S,H,nvs=0,nba,prime=0,i=1,pr,Q;
+   float nvp;
+   printf("nombre d'employer:");
+   scanf("%d",&nbremp);
+
+   do
+   {
+    printf("\n EMPLOYER %d \n",i);
+
+    printf("le salaire:");
+    scanf("%d",&S);
+
+    printf("l'heure travailler:");
+    scanf("%d",&H);
+
+    if(H>300){
+   prime=S*5;}
+
+    else if(H>200){
+      prime=S*3;
+
+    }
+    else if(H>150){
+        prime=S*2;
+    }
+    else{
+        nvs=S-((150-H)*20);
+    }
+    printf("prime =%d\n",prime);
+     printf("le nouveau salaire est:%d",nvs);
+    i++;
+   } while (i<=nbremp);
+
+
+printf("le nombre d'article");
+scanf("%d",&nba);
+
+do
+{
+    printf("\n article %d\n",i);
+
+    printf("prix de chaque article:");
+    scanf("%d",&pr);
+
+    printf("la quntite:");
+    scanf("%d",&Q);
+
+    if(Q>200){
+    nvp=pr-(pr*0.7);}
+    else if(Q>100){
+        nvp=pr-(pr*0.5);}
+        else if(Q>50){
+            nvp=pr-(pr*0.2);
+        }
+        else{
+            nvp=pr;
+        }
+        printf("nvp =%.2f",nvp);
+
+
+} while (i<=nba);
+
+
+   */
+ /*int T[tmax],i,reste,N;
+do
+{
+    printf("entrez N");
+    scanf("%d",N);
+} while (N>=tmax);
+for ( i = 0; i < N; i++)
+{
+     printf("entrez un valeur");
+     scanf("%d",&T[i]);
+}
+for ( i = N-1; i <=0; i--)
+{
+    printf("%d",T[i]);
+
+}
+
+*//*
+int T[k],i,x,N;
+
+do
+{
+    printf("taille");
+    scanf("%d",&N);
+} while ( N <=0 || N >= k );
+
+for ( i = 0; i <N; i++)
+{
+    printf("entrez une val:");
+    scanf("%d",&T[i]);
+}
+for ( i = 0; i < N; i++)
+{
+    printf("%d",T[i]);
+    if (T[i]<0)
+    {
+        T[i]=0;
+    }
+    
+}
+*/
+ /*int T[Nmax],n,i,j,pos,x;
+  do
+  {
+    printf("taille:");
+    scanf("%d",&n);
+  } while (n<=0 || n>Nmax);
+  
+  for(i=0;i<n;i++){
+    printf("valeur%d:\n",i);
+    scanf("%d",&T[i]);
+  }
+  printf("entrez x que veut voulr supprimer:");
+  scanf("%d",&x);
+
+for(i=0;i<n;i++){
+    printf("%d\t",T[i]);
+}
+for(i=0;i<n;i++){
+    if(T[i]==x)
+    pos=i;
+}
+ for(j=pos;j<=n-2;j++){
+    T[j]=T[j+1];}
+
+n--;
+i--;
+printf("\n");
+    for(i=0;i<n;i++){
+    printf("T[%d]=%d\t",i,T[i]);
+    }
+    */
+  /* int N,n,T[Nmax],T2[Nmax],T3[Nmax],i;
+
+   do{
+    printf("taille:");
+    scanf("%d",&N);
+     printf("taille 2:");
+    scanf("%d",&n);
+   }while(N<=0 || N>Nmax);
+  
+   for(i=0;i<N;i++){
+   printf("valeur%d: ",i);
+   scanf("%d",&T[i]);}
+   for(i=0;i<N;i++){
+   printf("%d\t",T[i]);}
+    
+   for(i=0;i<n;i++){
+   printf("valeur%d: ",i);
+   scanf("%d",&T[i]);
+   }
+   for(i=0;i<n;i++){
+    printf("%d\t",T[i]);
+   }
+   for(i=0;i<N+n;i++){
+    T3[i]=T[i];
+   }
+   for(i=0;i<N+n-1;i++){
+    T3[N+i]=T2[i];
+   }
+   for(i=0;i<N+n;i++){
+    printf("T[%d]=%d\n",i,T[i]);
+   }
+
+*/
+/*int n,T[Nmax],i,temp=0,k,j;
+do
+{
+    printf("taille:");
+    scanf("%d",&n);
+} while (n<=0 || n>Nmax);
+ 
+for(i=0;i<n;i++){
+    printf("valeur%d:",i);
+    scanf("%d",&T[i]);
+}
+
+for(i=0;i<n;i++){
+printf("%d\t",T[i]);}
+
+for(i=0;i<=n-1;i++){
+    k=i;
+for(j=i+1;j<=n-2;i++){
+    k=j;
+if(T[i]<T[k]){
+    temp=T[i];
+    T[i]=T[k];
+    T[k]=temp;  
+}
+}
+}
+for(i=0;i<n;i++){
+printf("T[%d]=%d\n",i,T[i]);
+}
+*/
+int N,T[Nmax],i,val,j=0,min,temp;
+
+do
+{
+    printf("taille:");
+    scanf("%d",&N);
+} while (N<=0 || N>Nmax);
+
+for ( i = 0; i < N; i++)
+{
+    printf("valeur %d:\t ",i+1);
+    scanf("%d",&T[i]);
+}
+for ( i = 0; i < N-1; i++)
+{
+    min=i;
+
+for ( j = i+1; j< N; j++)
+{
+    if (T[j]<T[min])
+    {
+        min=j;
+    }
+    
+}
+
+temp=T[i];
+T[i]=T[min];
+T[min]=temp;
+}
+printf("ordre croissant:");
+
+for ( i = 0; i < N; i++)
+{
+        printf("T[%d]=%d\t",i,T[i]);
+}
+
+printf("entrez la val a inserer:");
+scanf("%d",&val);
+
+while(N>=0 && T[i]>val)
+{
+T[i+1]=T[i];
+i--;
+}
+T[i+1]=val;
+N++;
+
+printf("tableau apres insserstion:");
+
+for ( i = 0; i < N; i++)
+{
+    printf("T[%d]=%d\t",i,T[i]);
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
